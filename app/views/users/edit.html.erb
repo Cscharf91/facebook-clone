@@ -1,0 +1,18 @@
+<h3>Edit <%= @user.first_name %>'s Profile </h3>
+<p>
+  First Name: <%= @user.first_name %>
+</p>
+<p>
+  Last Name: <%= @user.last_name %>
+</p>
+<%= form_with(model: @user, local: true) do |f| %>
+  <%= f.label :age %>
+  <%= f.number_field :age %><br><br>
+  <%= f.label :location %>
+  <%= f.text_field :location %><br><br>
+  <%= f.label :occupation %>
+  <%= f.text_field :occupation %><br><br>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %><br><br>
+  <%= f.submit %>
+<% end %>

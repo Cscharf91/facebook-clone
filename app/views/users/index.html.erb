@@ -1,0 +1,13 @@
+<h2>Find Friends</h2>
+<% @users.each do |user| %>
+   <% friendship = current_user.friendships.find_by(friend_id: user.id) %>
+  <% unless user == current_user || friendship %>
+    <%= link_to user.first_name + ' ' + user.last_name, profile_user_path(user) %><br>
+    <% requested = user.received_requests.find { |request| request.requestor_id = current_user.id } %>
+    <% if requested %>
+      <%= button_to 'Delete Friend Request', friend_request_path(requested), method: :delete %>
+    <% else %>
+      <%= button_to 'Add Friend', friend_requests_path(requestor_id: current_user.id, receiver_id: user.id), method: :post %>
+    <% end %>
+  <% end%>
+<% end %>

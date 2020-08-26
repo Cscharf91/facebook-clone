@@ -1,0 +1,20 @@
+<h4>Incoming Requests</h4>
+<% if @incoming_fr %>
+  <% @incoming_fr.each do |fr| %>
+    <% requestor = User.find(fr.requestor_id) %>
+    <%= link_to requestor.first_name + ' ' + requestor.last_name, profile_user_path(requestor) %>
+    <%= button_to 'Add Friend', friendships_path(user_id: current_user, friend_id: requestor.id), method: :post %>
+  <% end %>
+<% else %>
+  <p>None :(</p>
+<% end %>
+
+<h4>Outgoing Requests</h4>
+<% if @outgoing_fr %>
+  <% @outgoing_fr.each do |fr| %>
+    <% receiver = User.find(fr.receiver_id) %>
+    <%= link_to receiver.first_name + ' ' + receiver.last_name, profile_user_path(receiver) %> 
+  <% end %>
+<% else %>
+  <p>None :(</p>
+<% end %>

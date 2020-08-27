@@ -4,11 +4,12 @@ Features:
 -Account authentication with devise
 -Friend requests and adding/deleting friends
 -Posting to a "timeline"-like feed, with only you and your friends' posts
+-Profile pictures and defaults to gravatar
+-Profile with info about users
 -Commenting on posts
 -Liking posts
 
 Upcoming:
--Profile Pictures
 -Email confirmation on signup
 -Omniauth to log in via Facebook
 -Nicer CSS styling (will revamp as I go through Odin's HTML/CSS course)

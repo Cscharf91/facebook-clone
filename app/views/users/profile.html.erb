@@ -1,4 +1,7 @@
 <h3><%= @user.first_name %>'s Profile</h3>
+
+  <%= image_tag user_avatar(@user, 100) %><br>
+
   <% requested = @user.received_requests.find { |request| request.requestor_id = current_user.id } %>
   <% friendship = @user.friendships.find_by(friend_id: current_user.id) %>
 

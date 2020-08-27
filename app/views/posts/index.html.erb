@@ -6,6 +6,7 @@
 <% if @posts %>
   <% @posts.each do |post| %>
     <% next unless current_user.friendships.find_by(friend_id: post.user.id) || post.user_id == current_user.id %>
+    <%= image_tag user_avatar(post.user, 75) %><br>
     <%= link_to post.user.first_name + ' ' + post.user.last_name, profile_user_path(post.user) %>:</br>
     <%= distance_of_time_in_words(post.created_at, Time.now) %> ago<br>
     <%= post.message %></br>
@@ -28,6 +29,7 @@
     <% end %>
     <% if post.comments %>
       <% post.comments.each do |c| %>
+        <%= image_tag user_avatar(c.user, 50) %><br>
         <%= link_to c.user.first_name + ' ' + c.user.last_name, profile_user_path(c.user) %>:</br>
         <%= distance_of_time_in_words(c.created_at, Time.now) %> ago<br>
         <%= c.message %></br>

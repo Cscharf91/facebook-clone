@@ -274,7 +274,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   config.omniauth :facebook, "625427681713787", "b87e7356cf74065f0bf43a543c6c7142",
-  callback_url: "http://fast-sierra-54264.herokuapp.com/users/auth/facebook/callback"
+  callback_url: "https://fast-sierra-54264.herokuapp.com/users/auth/facebook/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

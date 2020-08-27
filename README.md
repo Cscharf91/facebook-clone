@@ -8,8 +8,8 @@ Features:
 -Profile with info about users
 -Commenting on posts
 -Liking posts
+-Omniauth to log in via Facebook
 
 Upcoming:
 -Email confirmation on signup
--Omniauth to log in via Facebook
 -Nicer CSS styling (will revamp as I go through Odin's HTML/CSS course)

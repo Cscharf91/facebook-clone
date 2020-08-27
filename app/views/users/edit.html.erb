@@ -1,13 +1,12 @@
 <h3>Edit <%= @user.first_name %>'s Profile </h3>
-<p>
-  First Name: <%= @user.first_name %>
-</p>
-<p>
-  Last Name: <%= @user.last_name %>
-</p>
+
 <%= form_with(model: @user, local: true) do |f| %>
   <%= image_tag user_avatar(@user, 100) %><br>
   <%= f.file_field :avatar %><br>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br><br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br><br>
   <%= f.label :age %>
   <%= f.number_field :age %><br><br>
   <%= f.label :location %>

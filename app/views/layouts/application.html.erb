@@ -11,15 +11,17 @@
 
   <body>
     <% if current_user %>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Profile', profile_user_path(current_user) %>
-      <% if current_user.received_requests.count > 0 %>
-        <%= link_to "Friend Requests(#{current_user.received_requests.count})", friend_requests_path %>
-      <% else %>
-        <%= link_to 'Friend Requests', friend_requests_path %>
-      <% end %>
-      <%= link_to 'Find Friends', users_path %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      <nav class="top-navbar">
+        <%= link_to image_tag('fb-logo'), root_path, class: 'fb-logo' %>
+        <%= link_to image_tag('profile'), profile_user_path(current_user), class: 'profile-icon' %>
+        <%= link_to image_tag('find-friends'), users_path, class: 'friends-icon' %>
+        <%= link_to image_tag('logout'), destroy_user_session_path, method: :delete %>
+        <% if current_user.received_requests.count > 0 %>
+          <%= link_to "Friend Requests(#{current_user.received_requests.count})", friend_requests_path %>
+        <% else %>
+          <%= link_to 'Friend Requests', friend_requests_path %>
+        <% end %>
+      </nav>
     <% end %>
 
     <p class="notice"><%= notice %></p>

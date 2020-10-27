@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_post, only: [:show]
 
   def index
     @posts = Post.all.order("created_at DESC")
+    @visibilities = [["Friends Only", "Friends Only"], ["Public", "Public"]]
     @post = Post.new
     @comment = Comment.new
   end
@@ -38,6 +40,13 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :visibility)
   end
+
+  def find_post
+    unless current_user.posts.find_by(id: params[:id])
+      redirect_to root_path
+    end
+  end
+
 end

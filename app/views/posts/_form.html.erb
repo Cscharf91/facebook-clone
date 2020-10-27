@@ -1,5 +1,10 @@
-<%= form_with(model: @post, local: true) do |f| %>
-  <%= f.label :message, "What's on your mind?" %><br>
-  <%= f.text_area :message %>
-  <%= f.submit %>
-<% end %>
+<div class="post-container">
+  <%= image_tag user_avatar(current_user, 75), class: "prof-pic-posting" %><br>
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="post-grid">
+      <%= f.select(:visibility, options_for_select(@visibilities)) %>
+      <%= f.text_area :message, placeholder: "Whats on your mind?" %><br>
+      <%= f.submit(class: "submit-btn") %>
+    </div>
+  <% end %>
+</div>

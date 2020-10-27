@@ -1,19 +1,21 @@
+<div class="post-container-posted">
 <h3>Edit <%= @user.first_name %>'s Profile </h3>
 
 <%= form_with(model: @user, local: true) do |f| %>
-  <%= image_tag user_avatar(@user, 100) %><br>
+  <%= image_tag user_avatar(@user, 100), class: "image-select" %><br>
   <%= f.file_field :avatar %><br>
   <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br><br>
+  <%= f.text_field :first_name, class: "profile-field" %><br><br>
   <%= f.label :last_name %>
-  <%= f.text_field :last_name %><br><br>
+  <%= f.text_field :last_name, class: "profile-field" %><br><br>
   <%= f.label :age %>
-  <%= f.number_field :age %><br><br>
+  <%= f.number_field :age, class: "profile-field" %><br><br>
   <%= f.label :location %>
-  <%= f.text_field :location %><br><br>
+  <%= f.text_field :location, class: "profile-field" %><br><br>
   <%= f.label :occupation %>
-  <%= f.text_field :occupation %><br><br>
+  <%= f.text_field :occupation, class: "profile-field" %><br><br>
   <%= f.label :bio %>
   <%= f.text_area :bio %><br><br>
-  <%= f.submit %>
+  <%= f.submit(class: "submit-btn") %>
 <% end %>
+</div>

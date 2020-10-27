@@ -1,15 +1,210 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background: #18191a;
+    color: #e4e6eb;
+}
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+  
+ol, ul {
+    list-style: none;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Navbar */
+
+.top-navbar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    background: #242526;
+    border-bottom: 1px solid #3d3d3d;
+    margin-bottom: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.fb-logo {
+    width: 50px;
+}
+
+.profile-icon {
+    width: 30px;
+}
+
+.post-container {
+    max-width: 435px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #242526;
+    border-radius: 15px;
+    display: grid;
+    justify-items: center;
+}
+
+.post-container-posted {
+    text-align: left;
+    max-width: 610px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #242526;
+    border-radius: 15px;
+    display: grid;
+    justify-items: start;
+}
+
+.post-grid {
+    display: grid;
+    min-width: 400px;
+    justify-items: center;
+}
+
+.prof-pic-posting {
+    width: 50px;
+    margin: 10px;
+}
+
+textarea {
+    font-size: 16px;
+    background: #3a3b3c;
+    color: white;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    border: none;
+    padding: 10px;
+    height: 50px;
+    border-radius: 15px;
+    margin: 10px;
+    resize: none;
+}
+
+.profile-field {
+    color: white;
+    border: none;
+    height: 30px;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 10px;
+    background: #3a3b3c;
+
+}
+
+.post-grid textarea {
+    width: 80%;
+}
+
+.submit-btn {
+    width: 80%;
+    background: #505151;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+}
+
+select {
+    transition: 0.5s;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 2px;
+    border-radius: 10px;
+    background: #3a3b3c;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+}
+
+select:hover {
+    transition: 0.5s;
+    background: #212122;
+}
+
+.poster-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: start;
+    max-width: 200px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.name-and-date {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.post-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #3d3d3d;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.likes-display {
+    color: rgb(201, 200, 200);
+    margin: 10px;
+}
+
+.post-btn {
+    transition: 0.5s;
+    font-size: 16px;
+    color: rgb(194, 194, 194);
+    background: #3a3b3c;
+    border: none; 
+    height: 30px;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.post-btn:hover {
+    transition: 0.5s;
+    background: rgb(24, 24, 24);
+}
+
+.post-btns-container {
+    display: flex;
+    margin: 10px;
+}
+.post-btns-container > * {
+    margin-left: 10px;
+}
+
+.profile-info {
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #3d3d3d;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+@media (max-width: 800px) {
+    .post-grid {
+        min-width: 80%;
+    }
+}

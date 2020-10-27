@@ -38,7 +38,7 @@ class User < ApplicationRecord
       full_name = auth.info.name.split
       user.first_name = full_name[0]
       user.last_name = full_name[1]
-      user.avatar = auth.info.image # assuming the user model has an image
+      # user.avatar = auth.info.image # assuming the user model has an image
     end
   end
 end

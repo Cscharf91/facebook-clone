@@ -12,10 +12,10 @@
   <body>
     <% if current_user %>
       <nav class="top-navbar">
-        <%= link_to image_tag('fb-logo'), root_path, class: 'fb-logo' %>
-        <%= link_to image_tag('profile'), profile_user_path(current_user), class: 'profile-icon' %>
-        <%= link_to image_tag('find-friends'), users_path, class: 'friends-icon' %>
-        <%= link_to image_tag('logout'), destroy_user_session_path, method: :delete %>
+        <%= link_to image_tag('fb-logo.png'), root_path, class: 'fb-logo' %>
+        <%= link_to image_tag('profile.png'), profile_user_path(current_user), class: 'profile-icon' %>
+        <%= link_to image_tag('find-friends.png'), users_path, class: 'friends-icon' %>
+        <%= link_to image_tag('logout.png'), destroy_user_session_path, method: :delete %>
         <% if current_user.received_requests.count > 0 %>
           <%= link_to "Friend Requests(#{current_user.received_requests.count})", friend_requests_path %>
         <% else %>
